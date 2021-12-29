@@ -143,7 +143,7 @@ namespace PickPointTest.DataProviders
         {
             try
             {
-                var collection = _postautomatSet.Where(x => x.IsOpen).AsAsyncEnumerable();
+                var collection = _postautomatSet.Where(x => x.IsOpen).OrderBy(x => x.Name).AsAsyncEnumerable();
                 await foreach (var item in collection)
                 {
                     yield return item;
